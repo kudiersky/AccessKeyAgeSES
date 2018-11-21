@@ -1,0 +1,16 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "myFirstNodeAWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jake kudiersky",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.290.0"
+  },
+  "dependencies": {
+  }
+}

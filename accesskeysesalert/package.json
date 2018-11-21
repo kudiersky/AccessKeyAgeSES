@@ -1,0 +1,21 @@
+{
+  "name": "accesskeysns",
+  "version": "1.0.0",
+  "description": "send SES containing AccessKey data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://jkudiersky@stash.customappsteam.co.uk/scm/cfl/accesskeysns.git"
+  },
+  "keywords": [
+    "AccessKeySNS"
+  ],
+  "author": "jake kudiersky",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.313.0"
+  }
+}
