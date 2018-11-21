@@ -36,7 +36,7 @@ AccessKeySESAlert has been created to publish the keys over a stated threshold t
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "DescribeQueryScanBooksTable",
+            "Sid": "AccessKeyDDB",
             "Effect": "Allow",
             "Action": [
                 "dynamodb:*",
