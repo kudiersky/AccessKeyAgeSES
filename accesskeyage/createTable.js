@@ -9,7 +9,7 @@ module.exports.createTable = function() {
 
   // Set the region 
   AWS.config.update({
-      region: process.env.region 
+      region: params.region 
   }); 
 
   // Load ddb sdk
@@ -40,7 +40,7 @@ module.exports.createTable = function() {
       },
 
 
-      TableName: "AccessKeyAge" //replace with variable 
+      TableName: "AccessKeyAge"  
   };
   ddb.createTable(params, function(err, data) {
       if (err) console.log(err, err.stack); // an error occurred
