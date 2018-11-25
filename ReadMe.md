@@ -17,9 +17,9 @@ registered SES email for recipient and domain
 
 To deploy this lambda. use the index.zip file will be required including module dependencies. 
 
-###Lambda
+### Lambda
 
-This Lambda would require a cloudwatch event of (daily)
+This Lambda would require a cloudwatch event of (daily), or when the recipient would like updating.
 
 ## Environmental Variables
 
