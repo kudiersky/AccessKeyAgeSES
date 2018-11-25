@@ -2,7 +2,7 @@
 var AWS = require('aws-sdk');
 
 // Set the region 
-AWS.config.update({region: 'us-east-2'});
+AWS.config.update({region: process.env.region});
 
 // Load SDK ddb
 var ddb = new AWS.DynamoDB();

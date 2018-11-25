@@ -1,7 +1,7 @@
 module.exports.sendMail = function(keyData) {
 
   var AWS = require('aws-sdk');
-  AWS.config.update({region: 'eu-west-1'});
+  AWS.config.update({region: process.env.region});
   
   var ses = new AWS.SES();
 
