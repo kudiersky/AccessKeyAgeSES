@@ -39,8 +39,10 @@ index.zip
 
 ### Lambda
 
+Use Cron job, to email recipent when required below set to daily 0900.
+
 ```
-cron(0 01 * * ? *)
+cron(0 09 * * ? *) 
 ```
 
 ## Role required for Lambda

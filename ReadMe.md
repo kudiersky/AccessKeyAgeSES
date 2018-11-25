@@ -2,15 +2,11 @@
 
 ## Getting Started
 
-This app runs from the terminal and will retreive access key data (exclusive of the access key value), if users in an account 
-and store themin a DDB. Further a SES templated email will be sent to a predefined SES email.
+This lambda will retreive access key data and store them in a DDB. Further a SES templated email will be sent to a predefined SES email.
 
 ### Prerequisites
 
 aws credentials
-node.js 
-npm
-aws-sdk
 registered SES email for recipient and domain 
 
 ### Installing

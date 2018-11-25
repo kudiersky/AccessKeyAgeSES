@@ -63,10 +63,13 @@ AccessKeySESAlert has been created to publish the keys over a stated threshold t
     ]
 }
 ```
-
 ### Installing
 
-Intention: to depoly deployed with Terraform to Accounts
+Intention: to depoly deployed with Terraform to Accounts. The lambda can be uploaded as a .zip file. 
+
+```
+index.zip
+```
 
 ### Lambda
 
