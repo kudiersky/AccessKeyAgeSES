@@ -2,11 +2,10 @@
 
 ## Getting Started
 
-This app runs from the terminal and will send an Email using SES with a HTML table of key ages over a coded value (70days default)
+This Lambda and will send an Email using SES with a HTML table of key ages over a coded value (70days default)
 
-Query table for items over threshold => Generates SES email to hard coded address.
+Query table for items over threshold => Generates SES email to env variable address.
 
-run node index.js
 
 <pre>
 
@@ -25,16 +24,51 @@ run node index.js
 ### Prerequisites
 
 aws credentials
-node.js 
-npm
-aws-sdk
 ran AccessKeyAge stash.customappsteam.co.uk/scm/cfl/accesskeyage.git to generate a table that this app queries.
 Registered Emails receipient and originator.
 
+This Lambda would require a cloudwatch event of 
 
 ### Installing
 
-Intention: to depoly deployed with Terraform to Accounts
+Intention: to depoly deployed with Terraform to Accounts. The lambda can be uploaded as a .zip file. 
+
+```
+index.zip
+```
+
+### Lambda
+
+```
+cron(0 01 * * ? *)
+```
+
+## Role required for Lambda
+
+```json
+
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "organizations:ListAccounts",
+                "ses:SendEmail",
+                "ses:SendRawEmail",
+                "ec2:Describe*",
+                "dynamodb:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+### Environmental Vairables
+
+```
+region = <region for DDB table>
+```
 
 ## Authors
 
