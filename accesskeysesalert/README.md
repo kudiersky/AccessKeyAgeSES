@@ -1,4 +1,4 @@
-# AccesskeySESAlert
+# Accesskey SES Alert
 
 ## Getting Started
 
@@ -24,10 +24,7 @@ Query table for items over threshold => Generates SES email to env variable addr
 ### Prerequisites
 
 aws credentials
-ran AccessKeyAge stash.customappsteam.co.uk/scm/cfl/accesskeyage.git to generate a table that this app queries.
-Registered Emails receipient and originator.
-
-This Lambda would require a cloudwatch event of 
+an existing DDB table. Built by AccessKeyAge Lambda.
 
 ### Installing
 

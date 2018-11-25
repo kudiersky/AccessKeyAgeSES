@@ -1,4 +1,4 @@
-# AccesskeyAgeTableGenerator
+# Access Key Age Table Generator
 
 ## Getting Started
 
@@ -21,9 +21,7 @@ The DDB table will be created in the params.params object.
 ### Prerequisites
 
 aws credentials
-node.js 
-npm
-aws-sdk
+registered EMail 
 
 ### Associated App
 
