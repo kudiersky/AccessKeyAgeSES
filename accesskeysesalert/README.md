@@ -66,11 +66,16 @@ cron(0 09 * * ? *)
 }
 ```
 
-### Environmental Vairables
+
+## Environmental Variables
 
 ```
-region = <region for DDB table>
-```
+ReturnPath = registed SES Email 
+
+SourceAddresses = registed SES Email 
+
+ToAddresses = registed SES Email 
+
 
 ## Authors
 

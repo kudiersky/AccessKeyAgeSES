@@ -78,12 +78,10 @@ This Lambda would require a cloudwatch event of
 cron(0 01 * * ? *)
 ```
 
-## Environmental Variables
+### Environmental Vairables
 
 ```
-
-region = 'region'
-
+region = <region for DDB table>
 ```
 
 
