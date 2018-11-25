@@ -73,6 +73,11 @@ SourceAddresses = registed SES Email
 
 ToAddresses = registed SES Email 
 
+region = region of SES domain
+
+threshold = limit for lowest key age
+
+```
 
 ## Authors
 

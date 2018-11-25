@@ -1,7 +1,7 @@
 module.exports.sendMail = function(keyData) {
 
   var AWS = require('aws-sdk');
-  AWS.config.update({region: process.env.region});
+  AWS.config.update({region: 'eu-west-1'/*process.env.region*/});
   
   var ses = new AWS.SES();
 
@@ -24,7 +24,7 @@ var params = {
         
      ], 
      ToAddresses: [
-      'jake.kudiersky@kpmg.co.uk' //env variable for to address
+      process.env.ToAddresses //env variable for to address
      ]
     }, 
     Message: {
@@ -46,8 +46,8 @@ var params = {
     }, 
     ReplyToAddresses: [
     ], 
-    ReturnPath: 'jake.kudiersky@kpmg.co.uk', // for bounces
-    Source: 'jake.kudiersky@kpmg.co.uk' // source address
+    ReturnPath: process.env.ReturnPath, // for bounces
+    Source: process.env.Source // source address
    };
    ses.sendEmail(params, function(err, data) {
      if (err) console.log(err, err.stack); // an error occurred
