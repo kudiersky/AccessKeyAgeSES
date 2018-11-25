@@ -15,8 +15,22 @@ registered SES email for recipient and domain
 
 ### Installing
 
-To deploy this lambda. A zip file will be required including module dependencies. 
+To deploy this lambda. use the Lambda.zip file will be required including module dependencies. 
 
+###Lambda
+
+This Lambda would require a cloudwatch event of (daily)
+
+## Environmental Variables
+
+```
+ReturnPath = registed SES Email 
+
+SourceAddresses = registed SES Email 
+
+ToAddresses = registed SES Email 
+
+```
 
 ## Authors
 
