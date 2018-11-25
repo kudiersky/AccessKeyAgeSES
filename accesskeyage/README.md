@@ -44,11 +44,44 @@ AccessKeySESAlert has been created to publish the keys over a stated threshold t
         }
     ]
 }
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GenerateCredentialReport",
+                "iam:GenerateServiceLastAccessedDetails",
+                "iam:Get*",
+                "iam:List*",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 ```
 
 ### Installing
 
 Intention: to depoly deployed with Terraform to Accounts
+
+###Lambda
+
+This Lambda would require a cloudwatch event of 
+```
+cron(0 01 * * ? *)
+```
+
+## Environmental Variables
+
+```
+
+region = 'region'
+
+```
 
 
 ## Authors
