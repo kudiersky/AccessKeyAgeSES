@@ -15,7 +15,7 @@ registered SES email for recipient and domain
 
 ### Installing
 
-To deploy this lambda. use the Lambda.zip file will be required including module dependencies. 
+To deploy this lambda. use the index.zip file will be required including module dependencies. 
 
 ###Lambda
 

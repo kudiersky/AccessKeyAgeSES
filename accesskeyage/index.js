@@ -1,34 +1,38 @@
-var AWS = require('aws-sdk');
-// Load the AWS SDK for Node.js
+exports.handler = function(event, context) {
 
-var params = require('./params');
-//import parameters
+    var AWS = require('aws-sdk');
+    // Load the AWS SDK for Node.js
 
-// Set the region 
-AWS.config.update({
-    region: params.params.region
-});
+    var params = require('./params');
+    //import parameters
 
-// Load SDK ddb
-var ddb = new AWS.DynamoDB();
+    // Set the region 
+    AWS.config.update({
+        region: params.params.region
+    });
 
-//import  functions
-var queryTableExists = require('./queryTableExists.js');
-var createTable = require('./createTable.js');
-var listUsers = require('./listUsers.js');
+    // Load SDK ddb
+    var ddb = new AWS.DynamoDB();
 
-var tableName = 'AccessKeyAge' //store in params
+    //import  functions
+    var queryTableExists = require('./queryTableExists.js');
+    var createTable = require('./createTable.js');
+    var listUsers = require('./listUsers.js');
 
-queryTableExists.queryTableExists() //run synchronously 
+    var tableName = 'AccessKeyAge' //store in params
 
-var params = {
-    TableName: tableName
-};
-ddb.waitFor('tableExists', params, function(err, data) { //waits for the table to read active
-    if (err) console.log(err, err.stack); // an error occurred
-    else
+    queryTableExists.queryTableExists() //run synchronously 
 
-        console.log(`Table is ${data.Table.TableStatus}`);
+    var params = {
+        TableName: tableName
+    };
+    ddb.waitFor('tableExists', params, function(err, data) { //waits for the table to read active
+        if (err) console.log(err, err.stack); // an error occurred
+        else
 
-    listUsers.listUsers()
-});
+            console.log(`Table is ${data.Table.TableStatus}`);
+
+        listUsers.listUsers()
+    });
+
+}

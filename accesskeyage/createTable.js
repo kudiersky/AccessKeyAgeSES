@@ -9,7 +9,7 @@ module.exports.createTable = function() {
 
   // Set the region 
   AWS.config.update({
-      region: 'us-east-2'
+      region: 'us-east-2' 
   }); //hard coded region could be repaced with variable stored in variable.js as JSON 
 
   // Load ddb sdk
