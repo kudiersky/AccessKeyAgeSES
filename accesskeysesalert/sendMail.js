@@ -12,8 +12,7 @@ AWS.config.apiVersions = {
 
   var ses = new AWS.SES();
 
-  var Subject = 'Account Access Key Age Status'
-  /* The following example sends a formatted email: */
+  var Subject = 'Account Access Key Age Status' //make a varaible 
 
 var payLoad = keyData
 
@@ -25,7 +24,7 @@ var params = {
         
      ], 
      ToAddresses: [
-      process.env.ToAddresses //env variable for to address
+      'jake.kudiersky@kpmg.co.uk' //env variable for to address
      ]
     }, 
     Message: {
@@ -47,8 +46,8 @@ var params = {
     }, 
     ReplyToAddresses: [
     ], 
-    ReturnPath: process.env.ReturnPath, // for bounces
-    Source: process.env.SourceAddresses // source address
+    ReturnPath: 'jake.kudiersky@kpmg.co.uk', // for bounces
+    Source: 'jake.kudiersky@kpmg.co.uk' // source address
    };
    ses.sendEmail(params, function(err, data) {
      if (err) console.log(err, err.stack); // an error occurred

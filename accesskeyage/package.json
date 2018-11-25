@@ -9,8 +9,7 @@
   "author": "jake kudiersky",
   "license": "ISC",
   "devDependencies": {
-    "aws-sdk": "^2.290.0"
+    "aws-sdk": "^2.361.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
