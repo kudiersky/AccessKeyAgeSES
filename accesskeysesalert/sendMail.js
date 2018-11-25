@@ -25,7 +25,7 @@ var params = {
         
      ], 
      ToAddresses: [
-        "jake.kudiersky@kpmg.co.uk"
+      process.env.ToAddresses //env variable for to address
      ]
     }, 
     Message: {
@@ -47,12 +47,12 @@ var params = {
     }, 
     ReplyToAddresses: [
     ], 
-    ReturnPath: "jake.kudiersky@kpmg.co.uk", 
-    Source: "jake.kudiersky@kpmg.co.uk"
+    ReturnPath: process.env.ReturnPath, // for bounces
+    Source: process.env.SourceAddresses // source address
    };
    ses.sendEmail(params, function(err, data) {
      if (err) console.log(err, err.stack); // an error occurred
-     else     console.log(data);           // successful response
+     else     console.log(data,  `message successfully sent to ${process.env.ToAddresses}`);           // successful response
    })
 
 }

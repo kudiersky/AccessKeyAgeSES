@@ -1,3 +1,4 @@
+exports.handler = function(event, context) {
 
 var AWS = require('aws-sdk');
 
@@ -28,3 +29,5 @@ docClient.scan(params,function(err,data) {
         formatData.formatData(data)
     }
 }); 
+
+}
