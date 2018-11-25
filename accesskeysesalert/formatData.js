@@ -10,9 +10,9 @@ htmlText = 'The following users have been highlighted as their key ages exceed t
 //small function to return td in seperate colours 
 
 var bgcolor = (keyAge) => {
-  if(keyAge > process.env.threshold && keyAge < (process.env.threshold+10)){
+  if(keyAge > 70 && keyAge < 80){
       return 'f4c242' //return yellow
-  }else if (keyAge > 80 && keyAge < process.env.threshold+20){
+  }else if (keyAge > 80 && keyAge < 90){
     return 'f48341' //return orange
   }
   else return 'db443f' //return red
@@ -24,7 +24,7 @@ for (var key in keyData.Items) {
     let keyID = keyData.Items[key].KeyID,
      userName = keyData.Items[key].UserName,
      keyAge = keyData.Items[key].KeyAge
-
+     console.log(bgcolor(keyAge))
   htmlTable1 += 
   `<tr>
     <td>${keyID}</td><td>${userName}</td>
