@@ -35,7 +35,7 @@ module.exports.addKeyData = function(keyData) {
           'KeyAge': {
               N: (String(dateGen.dateGen(keyData.CreateDate)))
           }, //taking the date and coverting it to days
-          'Status': {
+          'Active': {
               S: String(keyData.Status)
           }
       }

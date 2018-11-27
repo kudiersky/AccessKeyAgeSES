@@ -1,4 +1,4 @@
-exports.handler = function(event, context) {
+//exports.handler = function(event, context) {
 
     var AWS = require('aws-sdk');
     // Load the AWS SDK for Node.js
@@ -35,4 +35,4 @@ exports.handler = function(event, context) {
         listUsers.listUsers()
     });
 
-}
+//}

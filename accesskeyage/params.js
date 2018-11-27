@@ -1,7 +1,7 @@
 exports.params = {
     tableName : "AccessKeyAge", //name of table
-    region: process.env.region, //region for DDB
-    keyAgeLowerLimit: process.env.threshold, //key age query lower limit.  
+    region: 'eu-west-1', //region for DDB
+    keyAgeLowerLimit: 70 //key age query lower limit.  
 
     
 };
