@@ -1,16 +1,18 @@
 module.exports.sendMail = function(keyData) {
 
-  var AWS = require('aws-sdk');
-  AWS.config.update({region: 'eu-west-1'/*process.env.region*/});
+  var AWS = require('aws-sdk')
+
+  var params = require('./params');
+
+  AWS.config.update({region: params.params.region})
   
-  var ses = new AWS.SES();
+  var ses = new AWS.SES()
 
 AWS.config.apiVersions = {
     ses: '2010-12-01',
-    // other service API versions
   };
 
-  var ses = new AWS.SES();
+  var ses = new AWS.SES()
 
   var Subject = 'Account Access Key Age Status' //make a varaible 
 
@@ -24,7 +26,7 @@ var params = {
         
      ], 
      ToAddresses: [
-      'jake.kudiersky@kpmg.co.uk' //env variable for to address
+      params.params.toAddress //env variable for to address
      ]
     }, 
     Message: {
@@ -42,16 +44,14 @@ var params = {
       Charset: "UTF-8", 
       Data: Subject
      }
-    
     }, 
     ReplyToAddresses: [
     ], 
-    ReturnPath: 'jake.kudiersky@kpmg.co.uk', // for bounces
-    Source: 'jake.kudiersky@kpmg.co.uk' // source address
+    ReturnPath: params.params.toAddress, // for bounces
+    Source: params.params.sourceAddress// source address
    };
    ses.sendEmail(params, function(err, data) {
      if (err) console.log(err, err.stack); // an error occurred
-     else     console.log(data,  `message successfully sent to ${process.env.ToAddresses}`);           // successful response
+     else     console.log(data, 'message successfully sent') // successful response
    })
-
 }

@@ -40,7 +40,7 @@ module.exports.createTable = function() {
       },
 
 
-      TableName: "AccessKeyAge"  
+      TableName: process.env.tableName 
   };
   ddb.createTable(params, function(err, data) {
       if (err) console.log(err, err.stack); // an error occurred

@@ -24,7 +24,7 @@ module.exports.addKeyData = function(keyData) {
   
   // Add the four results
   var params = {
-      TableName: myTable,
+      TableName: params.params.tableName,
       Item: {
           'KeyID': {
               S: String(keyData.AccessKeyId)

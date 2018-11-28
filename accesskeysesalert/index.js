@@ -1,33 +1,32 @@
-//exports.handler = function(event, context) {
+exports.handler = function(event, context) {
 
 var AWS = require('aws-sdk');
 
 var formatData = require('./formatData');
 
-AWS.config.update({region: 'eu-west-1'});
+var params = require('./params');
+
+AWS.config.update({region: params.params.region});
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-var keyAgeLowerLimit = 70;
-
 var params = {
-    TableName: "AccessKeyAge",
+    TableName: 'AccessKeyAge',
     ProjectionExpression: "#KA, KeyID, UserName, Active",
     FilterExpression: "#KA > :keyAgeLowerLimit",
     ExpressionAttributeNames: {
         "#KA": "KeyAge",
     },
     ExpressionAttributeValues: {
-         ":keyAgeLowerLimit": keyAgeLowerLimit
+         ":keyAgeLowerLimit": 70
     }
 };
 
-docClient.scan(params,function(err,data) {
-    if(err) {
-        console.log(err);
-    } else {
-        formatData.formatData(data)
-    }
-}); 
-
-//}
+    docClient.scan(params,function(err,data) {
+        if(err) {
+            console.log(err);
+        } else {
+            formatData.formatData(data)
+        }
+    }); 
+}

@@ -67,15 +67,17 @@ cron(0 09 * * ? *)
 ## Environmental Variables
 
 ```
-ReturnPath = registed SES Email 
+returnPath = <registed SES Email> 
 
-SourceAddresses = registed SES Email 
+sourceAddress = <registed SES Email>
 
-ToAddresses = registed SES Email 
+toAddress = <registed SES Email>
 
-region = region of SES domain
+region = <region of SES domain>
 
-threshold = limit for lowest key age
+keyAgeLowerLimit = <limit for lowest key age>
+
+tableName = <name of DB table>
 
 ```
 

@@ -4,7 +4,7 @@ module.exports.formatData = function(keyData) {
   
   var htmlTable1 = '', //blank variable to append to 
   htmlHeader = 'Access Key Age - Alert', //header of the email 
-  htmlText = 'The following users have been highlighted as their key ages exceed the threshold for this account.' //text above the table
+  htmlText = `The following keys have been highlighted as they have exceeded ${process.env.keyAgeLowerLimit} days.` //text above the table
   
   
   //small function to return td in seperate colourss

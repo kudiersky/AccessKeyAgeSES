@@ -79,7 +79,9 @@ cron(0 01 * * ? *)
 ### Environmental Vairables
 
 ```
-region = <region for DDB table>
+tableName <name of the table>
+region: <region of DB>
+keyAgeLowerLimit: <key age query lower limit>    
 ```
 
 

@@ -1,16 +1,16 @@
 // Load the AWS SDK for Node.js
-var AWS = require('aws-sdk');
+var AWS = require('aws-sdk')
 
 // Set the region 
-AWS.config.update({region: process.env.region});
+AWS.config.update({region: process.env.region})
 
 // Load SDK ddb
-var ddb = new AWS.DynamoDB();
+var ddb = new AWS.DynamoDB()
 
 //import createtable build function
-var createTable = require('./createTable.js');
+var createTable = require('./createTable.js')
 
-var tableName = 'AccessKeyAge'
+var tableName = process.env.tableName
 
 module.exports.queryTableExists = function(tableName){
 
@@ -19,12 +19,12 @@ module.exports.queryTableExists = function(tableName){
   //declare parameters
 
   var params = {
-    TableName : "accessKeyAge", //takes the parameter
+    TableName : process.env.region, //takes the parameter
     };
 
         ddb.describeTable(params, function(err, data) { //takes error and data
         if (data){
-          console.log(`${params.TableName} Table is ${data.Table.TableStatus}`)
+          console.log(`${process.env.region} Table is ${data.Table.TableStatus}`)
           resolve(data)
         }
 
